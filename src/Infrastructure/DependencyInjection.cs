@@ -18,9 +18,6 @@ public static class DependencyInjection
                 configuration.GetConnectionString("DefaultConnection"),
                 b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
-        //services.AddDbContext<ApplicationDbContext>(
-        //options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
-
         services.AddScoped<IDeviceRepository, DeviceRepository>();
 
         return services;

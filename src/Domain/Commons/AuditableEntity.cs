@@ -2,11 +2,11 @@
 
 public abstract class AuditableEntity : Entity
 {
-    public DateTimeOffset Created { get; set; }
+    public DateTimeOffset CreatedDate { get; set; } = DateTime.UtcNow;
 
-    public Guid CreatedBy { get; set; }
+    public int? CreatedBy { get; set; }
 
-    public DateTimeOffset LastModified { get; set; }
+    public DateTimeOffset LastModifiedDate { get; set; } = DateTime.UtcNow;
 
-    public Guid LastModifiedBy { get; set; }
+    public int? LastModifiedBy { get; set; }
 }

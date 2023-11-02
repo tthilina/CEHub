@@ -22,33 +22,33 @@ public class DeviceRepository : IDeviceRepository
         _applicationDbContext = applicationDbContext ?? throw new ArgumentNullException(nameof(applicationDbContext));
     }
 
-    public async Task<List<Device>> FindDevice(
-        string name,
-        CancellationToken cancellationToken)
-    {
-        return await _applicationDbContext
-            .Devices.AsNoTracking()
-            .Where(d => d.Name.Contains(name))
-            .ToListAsync(cancellationToken);
-    }
+    //public async Task<List<Device>> FindDevice(
+    //    string name,
+    //    CancellationToken cancellationToken)
+    //{
+    //    return await _applicationDbContext
+    //        .Devices.AsNoTracking()
+    //        .Where(d => d.Name.Contains(name))
+    //        .ToListAsync(cancellationToken);
+    //}
 
-    public async Task<Device?> GetDeviceById(
-        Guid id,
-        CancellationToken cancellationToken)
-    {
-        return await _applicationDbContext
-            .Devices.AsNoTracking()
-            .SingleOrDefaultAsync(d => d.Id == id, cancellationToken);
-    }
+    //public async Task<Device?> GetDeviceById(
+    //    Guid id,
+    //    CancellationToken cancellationToken)
+    //{
+    //    return await _applicationDbContext
+    //        .Devices.AsNoTracking()
+    //        .SingleOrDefaultAsync(d => d.Id == id, cancellationToken);
+    //}
 
-    public async Task<Device?> GetDeviceByName(
-        string name,
-        CancellationToken cancellationToken)
-    {
-        return await _applicationDbContext
-            .Devices.AsNoTracking()
-            .SingleOrDefaultAsync(d => d.Name == name, cancellationToken);
-    }
+    //public async Task<Device?> GetDeviceByName(
+    //    string name,
+    //    CancellationToken cancellationToken)
+    //{
+    //    return await _applicationDbContext
+    //        .Devices.AsNoTracking()
+    //        .SingleOrDefaultAsync(d => d.Name == name, cancellationToken);
+    //}
 
     public async Task<bool> CreateDeviceAsync(
         Device device,

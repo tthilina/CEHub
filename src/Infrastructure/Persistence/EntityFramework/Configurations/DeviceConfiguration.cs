@@ -10,8 +10,8 @@ internal class DeviceConfiguration : IEntityTypeConfiguration<Device>
     {
         builder.Ignore(e => e.DomainEvents);
 
-        builder.Property(t => t.Name)
-            .HasMaxLength(200)
-            .IsRequired();
+        //builder.Property(t => t.Name)
+        //    .HasMaxLength(200)
+        //    .IsRequired();
     }
 }

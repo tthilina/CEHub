@@ -4,17 +4,17 @@ namespace Domain.Models;
 
 public interface IDeviceRepository : IRepository<Device>
 {
-    Task<List<Device>> FindDevice(
-        string name,
-        CancellationToken cancellationToken);
+    //Task<List<Device>> FindDevice(
+    //    string name,
+    //    CancellationToken cancellationToken);
 
-    Task<Device?> GetDeviceById(
-        Guid id,
-        CancellationToken cancellationToken);
+    //Task<Device?> GetDeviceById(
+    //    Guid id,
+    //    CancellationToken cancellationToken);
 
-    Task<Device?> GetDeviceByName(
-        string name,
-        CancellationToken cancellationToken);
+    //Task<Device?> GetDeviceByName(
+    //    string name,
+    //    CancellationToken cancellationToken);
 
     Task<bool> CreateDeviceAsync(
         Device device,

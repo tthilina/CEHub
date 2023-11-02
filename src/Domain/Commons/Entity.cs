@@ -2,11 +2,9 @@ namespace Domain.Commons;
 
 public abstract class Entity
 {
-    public Guid Id { get; protected set; }
+    public int Id { get; protected set; }
 
-    public string Name { get; protected set; }
-
-    public bool IsDeleted { get; set; }
+    public bool IsDeleted { get; set; } = false;
 
     public override bool Equals(object obj)
     {

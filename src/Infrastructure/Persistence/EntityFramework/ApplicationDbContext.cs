@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using CEH.Domain.Models.Location;
 using Domain.Commons;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +14,18 @@ public class ApplicationDbContext : DbContext
     {
     }
 
+    //https://learn.microsoft.com/en-us/ef/core/miscellaneous/collations-and-case-sensitivity
+
     public DbSet<Device> Devices => Set<Device>();
+    public DbSet<Province> Provinces => Set<Province>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Province>().Property(c => c.ProvinceSinhala)
+            .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+        modelBuilder.Entity<Province>().Property(c => c.ProvinceTamil)
+            .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
         base.OnModelCreating(modelBuilder);
@@ -66,12 +75,12 @@ public class ApplicationDbContext : DbContext
         {
             if (entry.State == EntityState.Added)
             {
-                entry.Entity.Created = DateTime.UtcNow;
-                entry.Entity.CreatedBy = currentUserId;
+                entry.Entity.CreatedDate = DateTime.UtcNow;
+                //entry.Entity.CreatedBy = currentUserId;
             }
 
-            entry.Entity.LastModified = DateTime.UtcNow;
-            entry.Entity.LastModifiedBy = currentUserId;
+            entry.Entity.LastModifiedDate = DateTime.UtcNow;
+            //entry.Entity.LastModifiedBy = currentUserId;
         }
     }
 }
