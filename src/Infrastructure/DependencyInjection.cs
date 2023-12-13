@@ -1,4 +1,6 @@
-﻿using Domain.Models;
+﻿using CEH.Domain.Services.Locations;
+using CEH.Infrastructure.Repositories;
+using Domain.Models;
 using Infrastructure.Persistence.EntityFramework;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +21,7 @@ public static class DependencyInjection
                 b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
         services.AddScoped<IDeviceRepository, DeviceRepository>();
+        services.AddScoped<ILocationRepository, LocationRepository>();
 
         return services;
     }

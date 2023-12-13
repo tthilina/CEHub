@@ -27,7 +27,7 @@ try
     var app = builder.Build();
 
     // APM agent setup
-    app.UseElasticApm(builder.Configuration);
+    //app.UseElasticApm(builder.Configuration);
 
     app.UseSwagger();
     app.UseSwaggerUI();

@@ -4,6 +4,7 @@ using Infrastructure.Persistence.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CEH.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231105131843_AddSuppliers")]
+    partial class AddSuppliers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -238,9 +240,6 @@ namespace CEH.Infrastructure.Migrations
                     b.Property<int?>("ProductSubCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SupplierId")
-                        .HasColumnType("int");
-
                     b.Property<string>("SupplyQuantity")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)")
@@ -251,8 +250,6 @@ namespace CEH.Infrastructure.Migrations
                     b.HasIndex("ProductCategoryId");
 
                     b.HasIndex("ProductSubCategoryId");
-
-                    b.HasIndex("SupplierId");
 
                     b.ToTable("Products", (string)null);
                 });
@@ -309,10 +306,10 @@ namespace CEH.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3423), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4087), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "",
                             IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3426), new TimeSpan(0, 5, 30, 0, 0)),
+                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4088), new TimeSpan(0, 0, 0, 0, 0)),
                             NameEnglish = "Tea",
                             NameSinhala = "",
                             NameTamil = ""
@@ -320,10 +317,10 @@ namespace CEH.Infrastructure.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3452), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4092), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "",
                             IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3453), new TimeSpan(0, 5, 30, 0, 0)),
+                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4093), new TimeSpan(0, 0, 0, 0, 0)),
                             NameEnglish = "Rubber",
                             NameSinhala = "",
                             NameTamil = ""
@@ -331,10 +328,10 @@ namespace CEH.Infrastructure.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3457), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4096), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "",
                             IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3457), new TimeSpan(0, 5, 30, 0, 0)),
+                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4097), new TimeSpan(0, 0, 0, 0, 0)),
                             NameEnglish = "Spices",
                             NameSinhala = "",
                             NameTamil = ""
@@ -342,10 +339,10 @@ namespace CEH.Infrastructure.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3460), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4099), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "",
                             IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3461), new TimeSpan(0, 5, 30, 0, 0)),
+                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4100), new TimeSpan(0, 0, 0, 0, 0)),
                             NameEnglish = "Food, Feed & Beverage",
                             NameSinhala = "",
                             NameTamil = ""
@@ -353,10 +350,10 @@ namespace CEH.Infrastructure.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3464), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4102), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "",
                             IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3464), new TimeSpan(0, 5, 30, 0, 0)),
+                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4103), new TimeSpan(0, 0, 0, 0, 0)),
                             NameEnglish = "Electrical & Electronic",
                             NameSinhala = "",
                             NameTamil = ""
@@ -364,10 +361,10 @@ namespace CEH.Infrastructure.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3467), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4105), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "",
                             IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3468), new TimeSpan(0, 5, 30, 0, 0)),
+                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4106), new TimeSpan(0, 0, 0, 0, 0)),
                             NameEnglish = "Apparel & Textile",
                             NameSinhala = "",
                             NameTamil = ""
@@ -375,10 +372,10 @@ namespace CEH.Infrastructure.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3470), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4108), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "",
                             IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3471), new TimeSpan(0, 5, 30, 0, 0)),
+                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4109), new TimeSpan(0, 0, 0, 0, 0)),
                             NameEnglish = "Gem & Jewellery",
                             NameSinhala = "",
                             NameTamil = ""
@@ -386,10 +383,10 @@ namespace CEH.Infrastructure.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3474), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4111), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "",
                             IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3474), new TimeSpan(0, 5, 30, 0, 0)),
+                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 138, DateTimeKind.Unspecified).AddTicks(4112), new TimeSpan(0, 0, 0, 0, 0)),
                             NameEnglish = "Other",
                             NameSinhala = "",
                             NameTamil = ""
@@ -453,10 +450,10 @@ namespace CEH.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 40, DateTimeKind.Unspecified).AddTicks(2931), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 142, DateTimeKind.Unspecified).AddTicks(6725), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "",
                             IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 40, DateTimeKind.Unspecified).AddTicks(2933), new TimeSpan(0, 5, 30, 0, 0)),
+                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 142, DateTimeKind.Unspecified).AddTicks(6726), new TimeSpan(0, 0, 0, 0, 0)),
                             NameEnglish = "Tea bags",
                             NameSinhala = "",
                             NameTamil = "",
@@ -465,10 +462,10 @@ namespace CEH.Infrastructure.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 40, DateTimeKind.Unspecified).AddTicks(2952), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 142, DateTimeKind.Unspecified).AddTicks(6731), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "",
                             IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 40, DateTimeKind.Unspecified).AddTicks(2954), new TimeSpan(0, 5, 30, 0, 0)),
+                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 5, 13, 18, 43, 142, DateTimeKind.Unspecified).AddTicks(6731), new TimeSpan(0, 0, 0, 0, 0)),
                             NameEnglish = "Green tea",
                             NameSinhala = "",
                             NameTamil = "",
@@ -484,9 +481,6 @@ namespace CEH.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("BusinessType")
-                        .HasColumnType("int");
-
                     b.Property<int?>("CityId")
                         .HasColumnType("int");
 
@@ -496,6 +490,7 @@ namespace CEH.Infrastructure.Migrations
                         .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("ContactNumber2")
+                        .IsRequired()
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
@@ -509,26 +504,12 @@ namespace CEH.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<string>("ExportingCountries")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
-
-                    b.Property<int>("IsExporting")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IsQualityCertified")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IsReadyToExport")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IsRegisteredBusiness")
-                        .HasColumnType("int");
 
                     b.Property<int?>("LastModifiedBy")
                         .HasColumnType("int");
@@ -544,9 +525,6 @@ namespace CEH.Infrastructure.Migrations
 
                     b.Property<int?>("ProvinceId")
                         .HasColumnType("int");
-
-                    b.Property<string>("QualityCertificates")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -618,10 +596,6 @@ namespace CEH.Infrastructure.Migrations
                         .WithMany()
                         .HasForeignKey("ProductSubCategoryId");
 
-                    b.HasOne("CEH.Domain.Models.Suppliers.Supplier", null)
-                        .WithMany("SupplierProducts")
-                        .HasForeignKey("SupplierId");
-
                     b.Navigation("ProductCategory");
 
                     b.Navigation("ProductSubCategory");
@@ -655,11 +629,6 @@ namespace CEH.Infrastructure.Migrations
                     b.Navigation("District");
 
                     b.Navigation("Province");
-                });
-
-            modelBuilder.Entity("CEH.Domain.Models.Suppliers.Supplier", b =>
-                {
-                    b.Navigation("SupplierProducts");
                 });
 #pragma warning restore 612, 618
         }

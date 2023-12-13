@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using CEH.Domain.Models.Location;
+using CEH.Domain.Models.Locations;
 using Domain.Commons;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
@@ -18,14 +19,11 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<Device> Devices => Set<Device>();
     public DbSet<Province> Provinces => Set<Province>();
+    public DbSet<District> Districts => Set<District>();
+    public DbSet<City> Cities => Set<City>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Province>().Property(c => c.ProvinceSinhala)
-            .UseCollation("SQL_Latin1_General_CP1_CI_AS");
-        modelBuilder.Entity<Province>().Property(c => c.ProvinceTamil)
-            .UseCollation("SQL_Latin1_General_CP1_CI_AS");
-
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
         base.OnModelCreating(modelBuilder);
@@ -75,11 +73,11 @@ public class ApplicationDbContext : DbContext
         {
             if (entry.State == EntityState.Added)
             {
-                entry.Entity.CreatedDate = DateTime.UtcNow;
+                entry.Entity.CreatedDate = DateTime.Now;
                 //entry.Entity.CreatedBy = currentUserId;
             }
 
-            entry.Entity.LastModifiedDate = DateTime.UtcNow;
+            entry.Entity.LastModifiedDate = DateTime.Now;
             //entry.Entity.LastModifiedBy = currentUserId;
         }
     }

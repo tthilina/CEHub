@@ -2,7 +2,7 @@ namespace Domain.Commons;
 
 public abstract class Entity
 {
-    public int Id { get; protected set; }
+    public int Id { get;  set; }
 
     public bool IsDeleted { get; set; } = false;
 

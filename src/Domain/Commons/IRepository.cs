@@ -1,6 +1,6 @@
 ﻿namespace Domain.Commons;
 
-public interface IRepository<T> where T : IAggregateRoot
+public interface IRepository<T>
 {
     IUnitOfWork UnitOfWork { get; }
 }
