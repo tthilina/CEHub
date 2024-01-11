@@ -25,95 +25,106 @@ public class ProductCategoryConfiguration : IEntityTypeConfiguration<ProductCate
         builder.Property(c => c.Description)
             .UseCollation("SQL_Latin1_General_CP1_CI_AS")
             .HasMaxLength(500);
-        builder.HasData(
-                new ProductCategory
-                {
-                    Id = 1,
-                    NameEnglish = "Tea",
-                    NameSinhala = "",
-                    NameTamil = "",
-                    Description = "",
-                    IsDeleted = false,
-                    CreatedDate = DateTime.UtcNow,
-                    LastModifiedDate = DateTime.Now,
-                },
-                new ProductCategory
-                {
-                    Id = 2,
-                    NameEnglish = "Rubber",
-                    NameSinhala = "",
-                    NameTamil = "",
-                    Description = "",
-                    IsDeleted = false,
-                    CreatedDate = DateTime.UtcNow,
-                    LastModifiedDate = DateTime.Now,
-                },
-                new ProductCategory
-                {
-                    Id = 3,
-                    NameEnglish = "Spices",
-                    NameSinhala = "",
-                    NameTamil = "",
-                    Description = "",
-                    IsDeleted = false,
-                    CreatedDate = DateTime.UtcNow,
-                    LastModifiedDate = DateTime.Now,
-                },
-                new ProductCategory
-                {
-                    Id = 4,
-                    NameEnglish = "Food, Feed & Beverage",
-                    NameSinhala = "",
-                    NameTamil = "",
-                    Description = "",
-                    IsDeleted = false,
-                    CreatedDate = DateTime.UtcNow,
-                    LastModifiedDate = DateTime.Now,
-                },
-                new ProductCategory
-                {
-                    Id = 5,
-                    NameEnglish = "Electrical & Electronic",
-                    NameSinhala = "",
-                    NameTamil = "",
-                    Description = "",
-                    IsDeleted = false,
-                    CreatedDate = DateTime.UtcNow,
-                    LastModifiedDate = DateTime.Now,
-                },
-                new ProductCategory
-                {
-                    Id = 6,
-                    NameEnglish = "Apparel & Textile",
-                    NameSinhala = "",
-                    NameTamil = "",
-                    Description = "",
-                    IsDeleted = false,
-                    CreatedDate = DateTime.UtcNow,
-                    LastModifiedDate = DateTime.Now,
-                },
-                new ProductCategory
-                {
-                    Id = 7,
-                    NameEnglish = "Gem & Jewellery",
-                    NameSinhala = "",
-                    NameTamil = "",
-                    Description = "",
-                    IsDeleted = false,
-                    CreatedDate = DateTime.UtcNow,
-                    LastModifiedDate = DateTime.Now,
-                },
-                new ProductCategory
-                {
-                    Id = 8,
-                    NameEnglish = "Other",
-                    NameSinhala = "",
-                    NameTamil = "",
-                    Description = "",
-                    IsDeleted = false,
-                    CreatedDate = DateTime.UtcNow,
-                    LastModifiedDate = DateTime.Now,
-                }
-            );
+        //builder.HasData(
+        //        new ProductCategory
+        //        {
+        //            Id = 1,
+        //            NameEnglish = "Tea",
+        //            NameSinhala = "තේ",
+        //            NameTamil = "",
+        //            Description = "",
+        //            IsDeleted = false,
+        //            CreatedDate = DateTime.UtcNow,
+        //            LastModifiedDate = DateTime.Now,
+        //        },
+        //        new ProductCategory
+        //        {
+        //            Id = 2,
+        //            NameEnglish = "Rubber",
+        //            NameSinhala = "රබර්",
+        //            NameTamil = "",
+        //            Description = "",
+        //            IsDeleted = false,
+        //            CreatedDate = DateTime.UtcNow,
+        //            LastModifiedDate = DateTime.Now,
+        //        },
+        //        new ProductCategory
+        //        {
+        //            Id = 3,
+        //            NameEnglish = "Coconut",
+        //            NameSinhala = "පොල්",
+        //            NameTamil = "",
+        //            Description = "",
+        //            IsDeleted = false,
+        //            CreatedDate = DateTime.UtcNow,
+        //            LastModifiedDate = DateTime.Now,
+        //        },
+        //        new ProductCategory
+        //        {
+        //            Id = 4,
+        //            NameEnglish = "Spices",
+        //            NameSinhala = "කුළුබඩු",
+        //            NameTamil = "",
+        //            Description = "",
+        //            IsDeleted = false,
+        //            CreatedDate = DateTime.UtcNow,
+        //            LastModifiedDate = DateTime.Now,
+        //        },
+        //        new ProductCategory
+        //        {
+        //            Id = 5,
+        //            NameEnglish = "Food, Feed & Beverage",
+        //            NameSinhala = "ආහාර සහ පාන",
+        //            NameTamil = "",
+        //            Description = "",
+        //            IsDeleted = false,
+        //            CreatedDate = DateTime.UtcNow,
+        //            LastModifiedDate = DateTime.Now,
+        //        },
+        //        new ProductCategory
+        //        {
+        //            Id = 6,
+        //            NameEnglish = "Electrical & Electronic",
+        //            NameSinhala = "විදුලි සහ ඉලෙක්ට්‍රොනික",
+        //            NameTamil = "",
+        //            Description = "",
+        //            IsDeleted = false,
+        //            CreatedDate = DateTime.UtcNow,
+        //            LastModifiedDate = DateTime.Now,
+        //        },
+        //        new ProductCategory
+        //        {
+        //            Id = 7,
+        //            NameEnglish = "Apparel & Textile",
+        //            NameSinhala = "ඇඟලුම් සහ රෙදිපිළි",
+        //            NameTamil = "",
+        //            Description = "",
+        //            IsDeleted = false,
+        //            CreatedDate = DateTime.UtcNow,
+        //            LastModifiedDate = DateTime.Now,
+        //        },
+        //        new ProductCategory
+        //        {
+        //            Id = 8,
+        //            NameEnglish = "Gem & Jewellery",
+        //            NameSinhala = "මැණික් සහ ස්වර්ණාභරණ",
+        //            NameTamil = "",
+        //            Description = "",
+        //            IsDeleted = false,
+        //            CreatedDate = DateTime.UtcNow,
+        //            LastModifiedDate = DateTime.Now,
+        //        },
+        //        new ProductCategory
+        //        {
+        //            Id = 9,
+        //            NameEnglish = "Other",
+        //            NameSinhala = "අනික්",
+        //            NameTamil = "",
+        //            Description = "",
+        //            IsDeleted = false,
+        //            CreatedDate = DateTime.UtcNow,
+        //            LastModifiedDate = DateTime.Now,
+        //        }
+        //    );
     }
 }

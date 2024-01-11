@@ -12,4 +12,5 @@ public class ProductCategory : AuditableEntity
     public string? NameSinhala { get; set; }
     public string? NameTamil { get; set; }
     public string? Description { get; set; }
+    public virtual ICollection<ProductSubCategory> ProductSubCategories { get; set; }
 }

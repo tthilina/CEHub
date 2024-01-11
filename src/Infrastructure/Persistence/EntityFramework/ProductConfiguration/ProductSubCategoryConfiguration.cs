@@ -25,31 +25,31 @@ public class ProductSubCategoryConfiguration : IEntityTypeConfiguration<ProductS
         builder.Property(c => c.Description)
             .UseCollation("SQL_Latin1_General_CP1_CI_AS")
             .HasMaxLength(500);
-        builder.HasData(
-            new ProductSubCategory() 
-            {
-                Id = 1,
-                ProductCategoryId = 1,
-                NameEnglish = "Tea bags",
-                NameSinhala = "",
-                NameTamil = "",
-                Description = "",
-                IsDeleted = false,
-                CreatedDate = DateTime.UtcNow,
-                LastModifiedDate = DateTime.Now,
-            },
-            new ProductSubCategory()
-            {
-                Id = 2,
-                ProductCategoryId = 1,
-                NameEnglish = "Green tea",
-                NameSinhala = "",
-                NameTamil = "",
-                Description = "",
-                IsDeleted = false,
-                CreatedDate = DateTime.UtcNow,
-                LastModifiedDate = DateTime.Now,
-            }
-        );
+        //builder.HasData(
+        //    new ProductSubCategory() 
+        //    {
+        //        Id = 1,
+        //        ProductCategoryId = 1,
+        //        NameEnglish = "Tea bags",
+        //        NameSinhala = "",
+        //        NameTamil = "",
+        //        Description = "",
+        //        IsDeleted = false,
+        //        CreatedDate = DateTime.UtcNow,
+        //        LastModifiedDate = DateTime.Now,
+        //    },
+        //    new ProductSubCategory()
+        //    {
+        //        Id = 2,
+        //        ProductCategoryId = 1,
+        //        NameEnglish = "Green tea",
+        //        NameSinhala = "",
+        //        NameTamil = "",
+        //        Description = "",
+        //        IsDeleted = false,
+        //        CreatedDate = DateTime.UtcNow,
+        //        LastModifiedDate = DateTime.Now,
+        //    }
+        //);
     }
 }
