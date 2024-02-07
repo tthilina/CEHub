@@ -2,6 +2,7 @@
 using CEH.Domain.Models.Location;
 using CEH.Domain.Models.Locations;
 using CEH.Domain.Models.Products;
+using CEH.Domain.Models.Suppliers;
 using Domain.Commons;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
@@ -22,8 +23,11 @@ public class ApplicationDbContext : DbContext
     public DbSet<Province> Provinces => Set<Province>();
     public DbSet<District> Districts => Set<District>();
     public DbSet<City> Cities => Set<City>();
+    public DbSet<Product> Products => Set<Product>();
     public DbSet<ProductCategory> ProductCategories => Set<ProductCategory>();
     public DbSet<ProductSubCategory> ProductSubCategories => Set<ProductSubCategory>();
+    public DbSet<Supplier> Suppliers => Set<Supplier>();
+    public DbSet<SupplierProduct> SupplierProducts => Set<SupplierProduct>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -77,11 +81,11 @@ public class ApplicationDbContext : DbContext
             if (entry.State == EntityState.Added)
             {
                 entry.Entity.CreatedDate = DateTime.Now;
-                //entry.Entity.CreatedBy = currentUserId;
+                entry.Entity.CreatedBy = 1; //currentUserId;
             }
 
             entry.Entity.LastModifiedDate = DateTime.Now;
-            //entry.Entity.LastModifiedBy = currentUserId;
+            entry.Entity.LastModifiedBy = 1; //currentUserId;
         }
     }
 }

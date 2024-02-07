@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CEH.Domain.Models.Products;
+﻿using CEH.Domain.Models.Products;
 using CEH.Domain.Services.Products;
 using Domain.Commons;
 using Infrastructure.Persistence.EntityFramework;
@@ -21,10 +16,20 @@ public class ProductRepository : IProductRepository
     {
         _applicationDbContext = applicationDbContext ?? throw new ArgumentNullException(nameof(applicationDbContext));
     }
+
+    public Task<Product> AddProduct(Product product)
+    {
+        _applicationDbContext.Products.Add(product);
+        _applicationDbContext.SaveChanges();
+        return Task.FromResult(product);
+    }
     public async Task<List<ProductCategory>> AllCategoriesToListAsync()
     {
         return await _applicationDbContext
-            .ProductCategories.AsNoTracking().ToListAsync();
+            .ProductCategories
+            .Include(x => x.ProductSubCategories)
+            .AsNoTracking()
+            .ToListAsync();
     }
 
     public async Task<List<ProductSubCategory>> SubCategoriesToListAsync(int productCategoryId)
@@ -39,10 +44,7 @@ public class ProductRepository : IProductRepository
     public async Task<List<ProductCategory>> CategoriesToListAsync()
     {
         return await _applicationDbContext
-            .ProductCategories
-            .Include(x => x.ProductSubCategories)
-            .AsNoTracking()
-            .ToListAsync();
+            .ProductCategories.AsNoTracking().ToListAsync();
     }
 
     

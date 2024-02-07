@@ -7,7 +7,7 @@ using CEH.Domain.Models.Products;
 using CEH.Domain.Services.Products;
 using MediatR;
 
-namespace CEH.Application.Products;
+namespace CEH.Application.Products.Queries;
 public class GetAllProductCategoryQuery : IRequest<List<ProductCategory>>
 {
     public class GetAllProductCategoryQueryHandler : IRequestHandler<GetAllProductCategoryQuery, List<ProductCategory>>

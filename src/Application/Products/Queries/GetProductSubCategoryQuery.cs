@@ -8,7 +8,7 @@ using CEH.Domain.Models.Products;
 using CEH.Domain.Services.Products;
 using MediatR;
 
-namespace CEH.Application.Products;
+namespace CEH.Application.Products.Queries;
 public class GetProductSubCategoryQuery : IRequest<List<ProductSubCategory>>
 {
     public int productCategoryId { get; set; }

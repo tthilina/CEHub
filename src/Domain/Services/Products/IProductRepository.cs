@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CEH.Domain.Models.Products;
+using CEH.Domain.Models.Products.DTOs;
 using Domain.Commons;
 
 namespace CEH.Domain.Services.Products;
@@ -12,4 +13,5 @@ public interface IProductRepository : IRepository<ProductCategory>, IRepository<
     Task<List<ProductCategory>> CategoriesToListAsync();
     Task<List<ProductSubCategory>> SubCategoriesToListAsync(int productCategoryId);
     Task<List<ProductCategory>> AllCategoriesToListAsync();
+    Task<Product> AddProduct(Product product);
 }

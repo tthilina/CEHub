@@ -1,5 +1,4 @@
-﻿using CEH.Application.Locations.Queries;
-using CEH.Application.Products;
+﻿using CEH.Application.Products.Queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CEHub.API.Controllers;

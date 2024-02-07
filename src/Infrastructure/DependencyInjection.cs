@@ -1,5 +1,6 @@
 ﻿using CEH.Domain.Services.Locations;
 using CEH.Domain.Services.Products;
+using CEH.Domain.Services.Suppliers;
 using CEH.Infrastructure.Repositories;
 using Domain.Models;
 using Infrastructure.Persistence.EntityFramework;
@@ -24,6 +25,7 @@ public static class DependencyInjection
         services.AddScoped<IDeviceRepository, DeviceRepository>();
         services.AddScoped<ILocationRepository, LocationRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<ISupplierRepository, SupplierRepository>();
         return services;
     }
 }

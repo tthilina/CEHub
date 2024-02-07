@@ -238,9 +238,6 @@ namespace CEH.Infrastructure.Migrations
                     b.Property<int?>("ProductSubCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SupplierId")
-                        .HasColumnType("int");
-
                     b.Property<string>("SupplyQuantity")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)")
@@ -251,8 +248,6 @@ namespace CEH.Infrastructure.Migrations
                     b.HasIndex("ProductCategoryId");
 
                     b.HasIndex("ProductSubCategoryId");
-
-                    b.HasIndex("SupplierId");
 
                     b.ToTable("Products", (string)null);
                 });
@@ -304,96 +299,6 @@ namespace CEH.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProductCategories", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3423), new TimeSpan(0, 0, 0, 0, 0)),
-                            Description = "",
-                            IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3426), new TimeSpan(0, 5, 30, 0, 0)),
-                            NameEnglish = "Tea",
-                            NameSinhala = "",
-                            NameTamil = ""
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3452), new TimeSpan(0, 0, 0, 0, 0)),
-                            Description = "",
-                            IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3453), new TimeSpan(0, 5, 30, 0, 0)),
-                            NameEnglish = "Rubber",
-                            NameSinhala = "",
-                            NameTamil = ""
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3457), new TimeSpan(0, 0, 0, 0, 0)),
-                            Description = "",
-                            IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3457), new TimeSpan(0, 5, 30, 0, 0)),
-                            NameEnglish = "Spices",
-                            NameSinhala = "",
-                            NameTamil = ""
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3460), new TimeSpan(0, 0, 0, 0, 0)),
-                            Description = "",
-                            IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3461), new TimeSpan(0, 5, 30, 0, 0)),
-                            NameEnglish = "Food, Feed & Beverage",
-                            NameSinhala = "",
-                            NameTamil = ""
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3464), new TimeSpan(0, 0, 0, 0, 0)),
-                            Description = "",
-                            IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3464), new TimeSpan(0, 5, 30, 0, 0)),
-                            NameEnglish = "Electrical & Electronic",
-                            NameSinhala = "",
-                            NameTamil = ""
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3467), new TimeSpan(0, 0, 0, 0, 0)),
-                            Description = "",
-                            IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3468), new TimeSpan(0, 5, 30, 0, 0)),
-                            NameEnglish = "Apparel & Textile",
-                            NameSinhala = "",
-                            NameTamil = ""
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3470), new TimeSpan(0, 0, 0, 0, 0)),
-                            Description = "",
-                            IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3471), new TimeSpan(0, 5, 30, 0, 0)),
-                            NameEnglish = "Gem & Jewellery",
-                            NameSinhala = "",
-                            NameTamil = ""
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 34, DateTimeKind.Unspecified).AddTicks(3474), new TimeSpan(0, 0, 0, 0, 0)),
-                            Description = "",
-                            IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 34, DateTimeKind.Unspecified).AddTicks(3474), new TimeSpan(0, 5, 30, 0, 0)),
-                            NameEnglish = "Other",
-                            NameSinhala = "",
-                            NameTamil = ""
-                        });
                 });
 
             modelBuilder.Entity("CEH.Domain.Models.Products.ProductSubCategory", b =>
@@ -448,32 +353,6 @@ namespace CEH.Infrastructure.Migrations
                     b.HasIndex("ProductCategoryId");
 
                     b.ToTable("ProductSubCategories", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 40, DateTimeKind.Unspecified).AddTicks(2931), new TimeSpan(0, 0, 0, 0, 0)),
-                            Description = "",
-                            IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 40, DateTimeKind.Unspecified).AddTicks(2933), new TimeSpan(0, 5, 30, 0, 0)),
-                            NameEnglish = "Tea bags",
-                            NameSinhala = "",
-                            NameTamil = "",
-                            ProductCategoryId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 15, 23, 50, 40, DateTimeKind.Unspecified).AddTicks(2952), new TimeSpan(0, 0, 0, 0, 0)),
-                            Description = "",
-                            IsDeleted = false,
-                            LastModifiedDate = new DateTimeOffset(new DateTime(2023, 11, 6, 20, 53, 50, 40, DateTimeKind.Unspecified).AddTicks(2954), new TimeSpan(0, 5, 30, 0, 0)),
-                            NameEnglish = "Green tea",
-                            NameSinhala = "",
-                            NameTamil = "",
-                            ProductCategoryId = 1
-                        });
                 });
 
             modelBuilder.Entity("CEH.Domain.Models.Suppliers.Supplier", b =>
@@ -559,6 +438,44 @@ namespace CEH.Infrastructure.Migrations
                     b.ToTable("Suppliers", (string)null);
                 });
 
+            modelBuilder.Entity("CEH.Domain.Models.Suppliers.SupplierProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("CreatedDate")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("LastModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("LastModifiedDate")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SupplierId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("SupplierId");
+
+                    b.ToTable("SupplierProducts", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Models.Device", b =>
                 {
                     b.Property<int>("Id")
@@ -618,10 +535,6 @@ namespace CEH.Infrastructure.Migrations
                         .WithMany()
                         .HasForeignKey("ProductSubCategoryId");
 
-                    b.HasOne("CEH.Domain.Models.Suppliers.Supplier", null)
-                        .WithMany("SupplierProducts")
-                        .HasForeignKey("SupplierId");
-
                     b.Navigation("ProductCategory");
 
                     b.Navigation("ProductSubCategory");
@@ -630,7 +543,7 @@ namespace CEH.Infrastructure.Migrations
             modelBuilder.Entity("CEH.Domain.Models.Products.ProductSubCategory", b =>
                 {
                     b.HasOne("CEH.Domain.Models.Products.ProductCategory", "ProductCategory")
-                        .WithMany()
+                        .WithMany("ProductSubCategories")
                         .HasForeignKey("ProductCategoryId");
 
                     b.Navigation("ProductCategory");
@@ -655,6 +568,35 @@ namespace CEH.Infrastructure.Migrations
                     b.Navigation("District");
 
                     b.Navigation("Province");
+                });
+
+            modelBuilder.Entity("CEH.Domain.Models.Suppliers.SupplierProduct", b =>
+                {
+                    b.HasOne("CEH.Domain.Models.Products.Product", "Product")
+                        .WithMany("SupplierProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CEH.Domain.Models.Suppliers.Supplier", "Supplier")
+                        .WithMany("SupplierProducts")
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("CEH.Domain.Models.Products.Product", b =>
+                {
+                    b.Navigation("SupplierProducts");
+                });
+
+            modelBuilder.Entity("CEH.Domain.Models.Products.ProductCategory", b =>
+                {
+                    b.Navigation("ProductSubCategories");
                 });
 
             modelBuilder.Entity("CEH.Domain.Models.Suppliers.Supplier", b =>
