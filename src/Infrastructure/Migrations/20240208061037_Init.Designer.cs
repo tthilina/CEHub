@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CEH.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240206115313_Init")]
+    [Migration("20240208061037_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -223,6 +223,12 @@ namespace CEH.Infrastructure.Migrations
                     b.Property<DateTimeOffset>("LastModifiedDate")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<int?>("MonthlyMinimumQuantity")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MonthlySupplyQuantity")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -230,9 +236,13 @@ namespace CEH.Infrastructure.Migrations
                         .UseCollation("SQL_Latin1_General_CP1_CI_AS");
 
                     b.Property<string>("OtherDetails")
+                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)")
                         .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("ProductCategoryId")
                         .HasColumnType("int");
@@ -240,10 +250,14 @@ namespace CEH.Infrastructure.Migrations
                     b.Property<int?>("ProductSubCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("SupplyQuantity")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)")
-                        .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                    b.Property<int?>("SupplyMonths")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SupplyQuantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UnitType")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -396,6 +410,9 @@ namespace CEH.Infrastructure.Migrations
                     b.Property<string>("ExportingCountries")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ExternalSupplierId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -428,6 +445,15 @@ namespace CEH.Infrastructure.Migrations
 
                     b.Property<string>("QualityCertificates")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("SupplierVerified")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("SupplierVerifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset?>("SupplierVerifiedDate")
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("Id");
 

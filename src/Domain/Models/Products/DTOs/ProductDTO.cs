@@ -12,6 +12,11 @@ public class ProductDTO
     public int? ProductSubCategoryId { get; set; }
     public string Name { get; set; }
     public string? Description { get; set; }
-    public string? SupplyQuantity { get; set; }
-    public string? OtherDetails { get; set; }
+    public decimal? Price { get; set; }
+    public int? SupplyQuantity { get; set; }
+    public UnitType UnitType { get; set; } = UnitType.Kilogram_Kg;
+    public int? MonthlySupplyQuantity { get; set; }
+    public int? MonthlyMinimumQuantity { get; set; }
+    public string? SupplyMonths { get; set; }
+    public string OtherDetails { get; set; }
 }

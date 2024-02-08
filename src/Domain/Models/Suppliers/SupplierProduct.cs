@@ -10,7 +10,7 @@ namespace CEH.Domain.Models.Suppliers;
 public class SupplierProduct : AuditableEntity
 {
     public int SupplierId { get; set; }
-    public Supplier Supplier { get; set; }
+    public virtual Supplier Supplier { get; set; }
     public int ProductId { get; set; }
-    public Product Product { get; set; }
+    public virtual Product Product { get; set; }
 }

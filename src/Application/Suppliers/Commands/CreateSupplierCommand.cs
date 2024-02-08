@@ -34,13 +34,20 @@ internal class CreateSupplierCommandHandler : IRequestHandler<CreateSupplierComm
                     ProductCategoryId = item.ProductCategoryId,
                     ProductSubCategoryId= item.ProductSubCategoryId,
                     Name = item.Name,
-                    Description = item.Description
+                    Description = item.Description,
+                    Price = item.Price,
+                    SupplyQuantity = item.SupplyQuantity,
+                    UnitType = item.UnitType,
+                    MonthlySupplyQuantity = item.MonthlySupplyQuantity,
+                    MonthlyMinimumQuantity = item.MonthlyMinimumQuantity,
+                    SupplyMonths = item.SupplyMonths,
+                    OtherDetails = item.OtherDetails,
                 });
                 supplierProduct.Add(new SupplierProduct() { ProductId = newProduct.Id });
             }
         }
-        
-        var newSupplier =  await _supplierRepository.AddSupplier(new Supplier() 
+
+    var newSupplier =  await _supplierRepository.AddSupplier(new Supplier() 
         { 
             ProvinceId = request.Supplier.ProvinceId,
             DistrictId = request.Supplier.DistrictId,
@@ -51,6 +58,7 @@ internal class CreateSupplierCommandHandler : IRequestHandler<CreateSupplierComm
             Email = request.Supplier.Email,
             IsRegisteredBusiness = request.Supplier.IsRegisteredBusiness,
             BusinessType = request.Supplier.BusinessType,
+            BusinessName = request.Supplier.BusinessName,
             IsQualityCertified = request.Supplier.IsQualityCertified,
             QualityCertificates = request.Supplier.QualityCertificates,
             IsExporting = request.Supplier.IsExporting,

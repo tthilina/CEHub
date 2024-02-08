@@ -13,7 +13,6 @@ public class SupplierProductConfiguration : IEntityTypeConfiguration<SupplierPro
     public void Configure(EntityTypeBuilder<SupplierProduct> builder)
     {
         builder.ToTable("SupplierProducts");
-
         builder
             .HasOne(up => up.Product)
             .WithMany(p => p.SupplierProducts)

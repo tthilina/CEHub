@@ -19,13 +19,16 @@ public class ApplicationDbContext : DbContext
 
     //https://learn.microsoft.com/en-us/ef/core/miscellaneous/collations-and-case-sensitivity
 
+    //add-migration "Init"
+    //update-database
+
     public DbSet<Device> Devices => Set<Device>();
     public DbSet<Province> Provinces => Set<Province>();
     public DbSet<District> Districts => Set<District>();
-    public DbSet<City> Cities => Set<City>();
-    public DbSet<Product> Products => Set<Product>();
+    public DbSet<City> Cities => Set<City>();    
     public DbSet<ProductCategory> ProductCategories => Set<ProductCategory>();
     public DbSet<ProductSubCategory> ProductSubCategories => Set<ProductSubCategory>();
+    public DbSet<Product> Products => Set<Product>();
     public DbSet<Supplier> Suppliers => Set<Supplier>();
     public DbSet<SupplierProduct> SupplierProducts => Set<SupplierProduct>();
 

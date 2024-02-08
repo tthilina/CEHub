@@ -23,12 +23,17 @@ public class Supplier : AuditableEntity
     public string? Email { get; set; }
     public YesNo IsRegisteredBusiness { get; set; } = YesNo.No;
     public BusinessType BusinessType { get; set; } = BusinessType.Solo_Proprietor;
+    public string? BusinessName { get; set; }
     public YesNo IsQualityCertified { get; set; } = YesNo.No;
     public string? QualityCertificates  { get; set; }
     public YesNo IsExporting { get; set; } = YesNo.No;
     public string? ExportingCountries { get; set; }
     public YesNo IsReadyToExport { get; set; } = YesNo.Yes;
     public ICollection<SupplierProduct>? SupplierProducts { get; set; }
+    public int? ExternalSupplierId { get; set; }
+    public bool? SupplierVerified { get; set; }
+    public DateTimeOffset? SupplierVerifiedDate { get; set; }
+    public int? SupplierVerifiedBy { get; set; }
 }
 
 public enum YesNo
