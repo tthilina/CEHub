@@ -40,7 +40,7 @@ internal class CreateSupplierCommandHandler : IRequestHandler<CreateSupplierComm
                     UnitType = item.UnitType,
                     MonthlySupplyQuantity = item.MonthlySupplyQuantity,
                     MonthlyMinimumQuantity = item.MonthlyMinimumQuantity,
-                    SupplyMonths = item.SupplyMonths,
+                    Jan = item.Jan,
                     OtherDetails = item.OtherDetails,
                 });
                 supplierProduct.Add(new SupplierProduct() { ProductId = newProduct.Id });

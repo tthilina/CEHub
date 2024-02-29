@@ -21,6 +21,7 @@ public class ApplicationDbContext : DbContext
 
     //add-migration "Init"
     //update-database
+    //Remove-Migration
 
     public DbSet<Device> Devices => Set<Device>();
     public DbSet<Province> Provinces => Set<Province>();

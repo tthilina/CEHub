@@ -4,6 +4,7 @@ using Infrastructure.Persistence.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CEH.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240229165309_Add_Months")]
+    partial class Add_Months
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -566,7 +568,7 @@ namespace CEH.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Devices", (string)null);
+                    b.ToTable("Devices");
                 });
 
             modelBuilder.Entity("CEH.Domain.Models.Location.District", b =>
